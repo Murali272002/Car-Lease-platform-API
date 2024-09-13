@@ -10,13 +10,14 @@ public class CarMapper {
     public static Function<CarEntity,Car> TO_MODEL = carEntity -> {
         Car car = new Car.Builder()
                 .id(carEntity.getId())
-                .carName(carEntity.getCarName())
-                .companyName(carEntity.getCompanyName())
+                .model(carEntity.getModel())
+                .brand(carEntity.getBrand())
                 .noOfSeats(carEntity.getNoOfSeats())
-                .co2Emission(carEntity.getCo2Emission())
+                .availability(carEntity.getAvailability())
+                .prizePerDay(carEntity.getPrizePerDay())
                 .build();
         return car;
     };
 
-    public static Function<Car, CarEntity> TO_ENTITY = (car) -> new CarEntity(car.getId(), car.getCarName(), car.getCompanyName(), car.getNoOfSeats(), car.getCo2Emission());
+    public static Function<Car, CarEntity> TO_ENTITY = (car) -> new CarEntity(car.getId(), car.getModel(), car.getBrand(), car.getNoOfSeats(), car.getAvailability(), car.getPrizePerDay());
 }

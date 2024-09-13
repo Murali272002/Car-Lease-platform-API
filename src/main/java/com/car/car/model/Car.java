@@ -9,10 +9,11 @@ import java.util.UUID;
 public class Car {
 
     private UUID id;
-    private String carName;
-    private String companyName;
+    private String model;
+    private String brand;
     private int noOfSeats;
-    private boolean co2Emission;
+    private boolean availability;
+    private int prizePerDay;
 
     private Car(){
     }
@@ -20,17 +21,23 @@ public class Car {
     public UUID getId(){
         return id;
     }
-    public String getCarName(){
-        return carName;
+    public String getModel(){
+        return model;
     }
-    public String getCompanyName(){
-        return companyName;
+    public String getBrand(){
+        return brand;
     }
     public int getNoOfSeats(){
         return noOfSeats;
     }
-    public boolean getCo2Emission(){
-        return co2Emission;
+    public boolean getAvailability(){
+        return availability;
+    }
+    public int getPrizePerDay(){
+        return prizePerDay;
+    }
+    public void setAvailability(boolean availability){
+        this.availability = availability;
     }
 
     @JsonPOJOBuilder(withPrefix = "")
@@ -45,20 +52,24 @@ public class Car {
             car.id = id;
             return this;
         }
-        public Builder carName(String carName){
-            car.carName = carName;
+        public Builder model(String carName){
+            car.model = carName;
             return this;
         }
-        public Builder companyName(String companyName){
-            car.companyName = companyName;
+        public Builder brand(String companyName){
+            car.brand = companyName;
             return this;
         }
         public Builder noOfSeats(int noOfSeats){
             car.noOfSeats = noOfSeats;
             return this;
         }
-        public Builder co2Emission(boolean co2Emission){
-            car.co2Emission = co2Emission;
+        public Builder availability(boolean availability){
+            car.availability = availability;
+            return this;
+        }
+        public Builder prizePerDay(int prizePerDay){
+            car.prizePerDay = prizePerDay;
             return this;
         }
         public Car build(){
@@ -70,10 +81,11 @@ public class Car {
     public String toString(){
         return "Car{" +
                 "id=" + id +
-                ", carName=" + carName + '\'' +
-                ", companyName=" + companyName + '\'' +
+                ", model=" + model + '\'' +
+                ", brand=" + brand + '\'' +
                 ", noOfSeats=" + noOfSeats + '\'' +
-                ", co2Emission=" + co2Emission + '\'' +
+                ", availability=" + availability + '\'' +
+                ", prizePerDay=" + prizePerDay + '\'' +
                 '}';
     }
 
