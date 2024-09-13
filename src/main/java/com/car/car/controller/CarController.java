@@ -5,6 +5,8 @@ import com.car.car.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/car/api")
 public class CarController {
@@ -19,5 +21,10 @@ public class CarController {
     @PostMapping("/car")
     public Car addCar(@RequestBody Car car){
         return carService.addCar(car);
+    }
+
+    @GetMapping("/cars")
+    public List<Car> getCars(){
+        return carService.getCars();
     }
 }

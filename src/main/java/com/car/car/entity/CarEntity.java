@@ -16,20 +16,23 @@ public class CarEntity {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column
     private UUID id;
-    private String carName;
-    private String companyName;
+    private String model;
+    private String brand;
     private int noOfSeats;
-    private boolean co2Emission;
+    private boolean availability;
+    private int prizePerDay;
+
 
     public CarEntity(){
     }
 
-    public CarEntity(UUID id, String carName, String companyName, int noOfSeats, boolean co2Emission){
+    public CarEntity(UUID id, String carName, String companyName, int noOfSeats,boolean availability, int prizePerDay){
         this.id = id;
-        this.carName = carName;
-        this.companyName = companyName;
+        this.model = carName;
+        this.brand = companyName;
         this.noOfSeats = noOfSeats;
-        this.co2Emission = co2Emission;
+        this.availability = availability;
+        this.prizePerDay = prizePerDay;
     }
 
     public UUID getId(){
@@ -38,17 +41,17 @@ public class CarEntity {
     public void setId(UUID id){
         this.id = id;
     }
-    public String getCarName(){
-        return carName;
+    public String getModel(){
+        return model;
     }
-    public void setCarName(String carName){
-        this.carName = carName;
+    public void setModel(String model){
+        this.model = model;
     }
-    public String getCompanyName(){
-        return companyName;
+    public String getBrand(){
+        return brand;
     }
-    public void setCompanyName(String companyName){
-        this.companyName = companyName;
+    public void setBrand(String brand){
+        this.brand = brand;
     }
     public int getNoOfSeats(){
         return noOfSeats;
@@ -56,20 +59,27 @@ public class CarEntity {
     public void setNoOfSeats(int noOfSeats){
         this.noOfSeats = noOfSeats;
     }
-    public boolean getCo2Emission(){
-        return co2Emission;
+    public boolean getAvailability(){
+        return availability;
     }
-    public void setCo2Emission(boolean co2Emission){
-        this.co2Emission = co2Emission;
+    public void setAvailability(boolean availability){
+        this.availability = availability;
+    }
+    public int getPrizePerDay(){
+        return prizePerDay;
+    }
+    public void setPrizePerDay(int prizePerDay){
+        this.prizePerDay = prizePerDay;
     }
     @Override
     public String toString(){
         return "CarEntity{" +
                 "id=" + id +
-                ", carName=" + carName +
-                ", companyName=" + companyName +
+                ", model=" + model +
+                ", brand=" + brand +
                 ", noOfSeats=" + noOfSeats +
-                ",co2Emission=" + co2Emission +
+                ", availability=" + availability +
+                ",prizePerDay=" + prizePerDay +
                 '}';
     }
 
