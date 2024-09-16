@@ -29,7 +29,7 @@ payload : {
 (This api will work for booking the car for rent by using CustomerID, CarId & No.of Days they want)
 Response : Car Rented Sucessfully. Total cost for 2 days is ₹:6000
 
-      When you are returning the car Should use this API :                                                                
+      When you are returning the car Should use below API :                                                                
 5.Post : http://localhost:8080/rental/return-car/carId/63420631-fbdb-4683-b6d2-8626d445177d    
        (By keeping CarId you can return the car)
               Response : Car Returned Successfully.
