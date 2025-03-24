@@ -26,8 +26,8 @@ public class CustomerService {
            return CustomerMapper.TO_MODEL.apply(customerEntity);
     }
 
-    public List<Customer> getCustomers(){
-    List<CustomerEntity> customerEntities = customerRepository.findAll();
+    public List<Customer> getCustomers() {
+        List<CustomerEntity> customerEntities = customerRepository.findAll();
         return customerEntities.stream().map(customerEntity -> CustomerMapper.TO_MODEL.apply(customerEntity)).collect(Collectors.toList());
     }
 }
